@@ -413,19 +413,19 @@ export default function Services() {
   const [selectedService, setSelectedService] = useState<typeof services[0] | null>(null)
 
   return (
-    <section id="services" ref={ref} className="relative py-20 px-6">
+    <section id="services" ref={ref} className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6">
       <div className="container mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-5xl font-bold mb-4 glow-text">Our Services</h2>
-          <p className="text-xl text-gray-400">Explore the mystical dimensions of your existence</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 glow-text">Our Services</h2>
+          <p className="text-lg sm:text-xl text-gray-400">Explore the mystical dimensions of your existence</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -438,18 +438,18 @@ export default function Services() {
                 boxShadow: '0 0 30px rgba(255, 215, 0, 0.5)'
               }}
               onClick={() => setSelectedService(service)}
-              className="relative p-6 rounded-2xl cosmic-gradient glow-border cursor-pointer group overflow-hidden"
+              className="relative p-4 sm:p-6 rounded-2xl cosmic-gradient glow-border cursor-pointer group overflow-hidden"
               style={{ transformStyle: 'preserve-3d' }}
             >
-              <div className="relative w-full h-40 mb-4 rounded-lg overflow-hidden">
+              <div className="relative w-full h-32 sm:h-40 mb-3 sm:mb-4 rounded-lg overflow-hidden">
                 <img 
                   src={service.image} 
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-cosmic-gold">{service.title}</h3>
-              <p className="text-gray-300 text-sm">{service.description}</p>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 text-cosmic-gold">{service.title}</h3>
+              <p className="text-gray-300 text-xs sm:text-sm">{service.description}</p>
               
               <motion.div
                 className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cosmic-gold/20 to-cosmic-blue/20 opacity-0 group-hover:opacity-100 transition-opacity"
@@ -475,16 +475,16 @@ export default function Services() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-cosmic-midnight border-2 border-cosmic-gold rounded-2xl max-w-4xl max-h-[90vh] overflow-y-auto p-8 relative"
+              className="bg-cosmic-midnight border-2 border-cosmic-gold rounded-2xl max-w-4xl max-h-[90vh] overflow-y-auto p-4 sm:p-6 md:p-8 relative"
             >
               <button
                 onClick={() => setSelectedService(null)}
-                className="absolute top-4 right-4 text-3xl text-cosmic-gold hover:text-white transition-colors"
+                className="absolute top-2 right-2 sm:top-4 sm:right-4 text-2xl sm:text-3xl text-cosmic-gold hover:text-white transition-colors z-10"
               >
                 ✕
               </button>
 
-              <div className="mb-6">
+              <div className="mb-4 sm:mb-6">
                 <img 
                   src={selectedService.image} 
                   alt={selectedService.title}
@@ -492,9 +492,9 @@ export default function Services() {
                 />
               </div>
 
-              <h2 className="text-4xl font-bold mb-4 text-cosmic-gold">{selectedService.title}</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-cosmic-gold">{selectedService.title}</h2>
               
-              <div className="text-gray-300 whitespace-pre-line leading-relaxed">
+              <div className="text-sm sm:text-base text-gray-300 whitespace-pre-line leading-relaxed">
                 {selectedService.fullDescription}
               </div>
 
@@ -503,7 +503,7 @@ export default function Services() {
                 onClick={() => setSelectedService(null)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="mt-8 inline-block px-8 py-4 bg-gradient-to-r from-cosmic-gold to-cosmic-blue rounded-full font-bold glow-border"
+                className="mt-6 sm:mt-8 inline-block px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base bg-gradient-to-r from-cosmic-gold to-cosmic-blue rounded-full font-bold glow-border"
               >
                 Book This Service
               </motion.a>

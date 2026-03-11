@@ -80,6 +80,7 @@ export default function PalmReading() {
                   src="/palm.png"
                   alt="Mystical Palm"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-contain drop-shadow-[0_0_30px_rgba(255,215,0,0.3)]"
                   style={{
                     filter: 'brightness(1.1) contrast(1.1)',

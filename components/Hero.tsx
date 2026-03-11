@@ -22,13 +22,13 @@ function CosmicSphere() {
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="relative z-10 text-center px-6 max-w-5xl">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
+      <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-5xl md:text-7xl font-bold mb-6 glow-text"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 glow-text"
         >
           Explore the Secrets
           <br />
@@ -39,10 +39,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="text-xl md:text-2xl mb-8 text-gray-300"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-gray-300"
         >
           Personalized Vedic Astrology Consultations for Global Clients
-          <br />
+          <br className="hidden sm:block" />
           Unlock Your Life Path Through Ancient Wisdom
         </motion.p>
 
@@ -50,13 +50,13 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
         >
           <motion.a
             href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-gradient-to-r from-cosmic-gold to-yellow-600 rounded-full text-lg font-bold text-cosmic-black glow-border inline-block"
+            className="px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-cosmic-gold to-yellow-600 rounded-full text-base sm:text-lg font-bold text-cosmic-black glow-border inline-block"
           >
             Book Your Astrology Reading
           </motion.a>
@@ -66,7 +66,7 @@ export default function Hero() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 border-2 border-cosmic-gold rounded-full text-lg font-bold glow-border inline-block"
+            className="px-6 py-3 sm:px-8 sm:py-4 border-2 border-cosmic-gold rounded-full text-base sm:text-lg font-bold glow-border inline-block"
           >
             Chat on WhatsApp
           </motion.a>
@@ -76,18 +76,18 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
-          className="mt-12 flex justify-center gap-8 text-sm"
+          className="mt-8 sm:mt-12 flex flex-wrap justify-center gap-4 sm:gap-8 text-sm"
         >
           <div className="text-center">
-            <div className="text-3xl font-bold text-cosmic-gold">10K+</div>
+            <div className="text-2xl sm:text-3xl font-bold text-cosmic-gold">10K+</div>
             <div className="text-gray-400">Consultations</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-cosmic-gold">50+</div>
+            <div className="text-2xl sm:text-3xl font-bold text-cosmic-gold">50+</div>
             <div className="text-gray-400">Countries</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-cosmic-gold">15+</div>
+            <div className="text-2xl sm:text-3xl font-bold text-cosmic-gold">15+</div>
             <div className="text-gray-400">Years Experience</div>
           </div>
         </motion.div>

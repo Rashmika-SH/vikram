@@ -34,9 +34,13 @@ export default function About() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative w-64 h-64 mx-auto rounded-full cosmic-gradient glow-border p-2">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-cosmic-purple to-cosmic-indigo flex items-center justify-center text-8xl">
-                🧘
+            <div className="relative w-full max-w-md mx-auto rounded-2xl cosmic-gradient glow-border p-2">
+              <div className="w-full rounded-xl overflow-hidden">
+                <img 
+                  src="/about.jpeg" 
+                  alt="Astro Vikram" 
+                  className="w-full h-auto object-cover"
+                />
               </div>
             </div>
           </motion.div>
@@ -47,7 +51,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <p className="text-lg text-gray-300 mb-6">
-              With over 15 years of experience in Vedic astrology, palmistry, and spiritual guidance, 
+              With over 30+ years of experience in Vedic astrology, palmistry, and spiritual guidance, 
               I have dedicated my life to helping individuals discover their true cosmic purpose. 
               My approach combines ancient wisdom with modern understanding to provide accurate, 
               compassionate, and transformative consultations.

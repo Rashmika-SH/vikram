@@ -38,7 +38,7 @@ export default function WhyChooseUs() {
 
   const stats = [
     { value: 10000, suffix: '+', label: 'Happy Clients' },
-    { value: 15, suffix: '+', label: 'Years Experience' },
+    { value: 30, suffix: '+', label: 'Years Experience' },
     { value: 50, suffix: '+', label: 'Countries Served' },
     { value: 95, suffix: '%', label: 'Satisfaction Rate' },
   ]

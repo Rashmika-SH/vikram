@@ -4,14 +4,28 @@ import { motion } from 'framer-motion'
 
 export default function Footer() {
   return (
-    <footer className="relative py-12 px-6 border-t border-cosmic-gold/20">
+    <footer className="relative py-8 sm:py-12 px-4 sm:px-6 border-t border-cosmic-gold/20">
       <div className="container mx-auto max-w-7xl">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cosmic-gold to-cosmic-blue flex items-center justify-center">
-                <span className="text-xl">🔱</span>
-              </div>
+              <motion.div 
+                className="w-10 h-10 rounded-full overflow-hidden"
+                animate={{ 
+                  y: [0, -8, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                <img 
+                  src="/logo.jpeg" 
+                  alt="Astro Vikram Logo" 
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
               <span className="font-bold glow-text">Astro Vikram</span>
             </div>
             <p className="text-gray-400 text-sm">
@@ -53,7 +67,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-cosmic-gold/20 pt-8 text-center text-gray-400 text-sm">
+        <div className="border-t border-cosmic-gold/20 pt-6 sm:pt-8 text-center text-gray-400 text-xs sm:text-sm">
           <p>&copy; 2024 Astro Vikram. All rights reserved.</p>
           <p className="mt-2">Designed with cosmic energy and spiritual wisdom</p>
         </div>
