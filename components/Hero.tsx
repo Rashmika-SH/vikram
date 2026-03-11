@@ -87,7 +87,7 @@ export default function Hero() {
             <div className="text-gray-400">Countries</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl sm:text-3xl font-bold text-cosmic-gold">15+</div>
+            <div className="text-2xl sm:text-3xl font-bold text-cosmic-gold">30+</div>
             <div className="text-gray-400">Years Experience</div>
           </div>
         </motion.div>
