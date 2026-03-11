@@ -409,55 +409,39 @@ Face and shell readings complement each other perfectly - face reading shows you
 
 export default function Services() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.1 })
   const [selectedService, setSelectedService] = useState<typeof services[0] | null>(null)
 
   return (
-    <section id="services" ref={ref} className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6">
+    <section id="services" ref={ref} className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-cosmic-black">
       <div className="container mx-auto max-w-7xl">
-        <motion.div
-          initial={{ opacity: 1, y: 0 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12 sm:mb-16"
-        >
+        <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 glow-text">Our Services</h2>
           <p className="text-lg sm:text-xl text-gray-400">Explore the mystical dimensions of your existence</p>
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {services.map((service, index) => (
-            <motion.div
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full">
+          {services && services.length > 0 ? services.map((service, index) => (
+            <div
               key={index}
-              initial={{ opacity: 1, y: 0, rotateX: 0 }}
-              animate={{ opacity: 1, y: 0, rotateX: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.05 }}
-              whileHover={{ 
-                scale: 1.05, 
-                rotateY: 5,
-                boxShadow: '0 0 30px rgba(255, 215, 0, 0.5)'
-              }}
               onClick={() => setSelectedService(service)}
-              className="relative p-4 sm:p-6 rounded-2xl cosmic-gradient glow-border cursor-pointer group overflow-hidden"
-              style={{ transformStyle: 'preserve-3d' }}
+              className="relative p-4 sm:p-6 rounded-2xl cosmic-gradient glow-border cursor-pointer group overflow-hidden hover:scale-105 transition-transform w-full"
             >
-              <div className="relative w-full h-32 sm:h-40 mb-3 sm:mb-4 rounded-lg overflow-hidden">
+              <div className="relative w-full h-32 sm:h-40 mb-3 sm:mb-4 rounded-lg overflow-hidden bg-gray-800">
                 <img 
                   src={service.image} 
                   alt={service.title}
                   loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  onError={(e) => {
+                    console.log('Image failed to load:', service.image)
+                    e.currentTarget.style.display = 'none'
+                  }}
                 />
               </div>
               <h3 className="text-lg sm:text-xl font-bold mb-2 text-cosmic-gold">{service.title}</h3>
               <p className="text-gray-300 text-xs sm:text-sm">{service.description}</p>
-              
-              <motion.div
-                className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cosmic-gold/20 to-cosmic-blue/20 opacity-0 group-hover:opacity-100 transition-opacity"
-                style={{ zIndex: -1 }}
-              />
-            </motion.div>
-          ))}
+            </div>
+          )) : <p className="text-white">No services available</p>}
         </div>
       </div>
 
