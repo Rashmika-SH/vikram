@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import Services from '@/components/Services'
@@ -15,29 +15,38 @@ import CustomCursor from '@/components/CustomCursor'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import Starfield from '@/components/Starfield'
 import RotatingZodiacWheel from '@/components/RotatingZodiacWheel'
+import LoadingScreen from '@/components/LoadingScreen'
 
 export default function Home() {
+  const [isLoaded, setIsLoaded] = useState(false)
+
   useEffect(() => {
     // Smooth scroll
     document.documentElement.classList.add('scroll-smooth')
+    
+    // Set loaded after a brief moment
+    setIsLoaded(true)
   }, [])
 
   return (
-    <main className="relative min-h-screen">
-      <RotatingZodiacWheel />
-      <Starfield />
-      <CustomCursor />
-      <Navbar />
-      <Hero />
-      <Services />
-      <PalmReading />
-      <About />
-      <WhyChooseUs />
-      <Testimonials />
-      <FAQ />
-      <Contact />
-      <Footer />
-      <WhatsAppButton />
-    </main>
+    <>
+      <LoadingScreen />
+      <main className="relative min-h-screen" style={{ opacity: isLoaded ? 1 : 0, transition: 'opacity 0.3s' }}>
+        <RotatingZodiacWheel />
+        <Starfield />
+        <CustomCursor />
+        <Navbar />
+        <Hero />
+        <Services />
+        <PalmReading />
+        <About />
+        <WhyChooseUs />
+        <Testimonials />
+        <FAQ />
+        <Contact />
+        <Footer />
+        <WhatsAppButton />
+      </main>
+    </>
   )
 }

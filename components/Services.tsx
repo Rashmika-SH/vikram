@@ -409,15 +409,15 @@ Face and shell readings complement each other perfectly - face reading shows you
 
 export default function Services() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const isInView = useInView(ref, { once: true, amount: 0.1 })
   const [selectedService, setSelectedService] = useState<typeof services[0] | null>(null)
 
   return (
     <section id="services" ref={ref} className="relative py-12 sm:py-16 md:py-20 px-4 sm:px-6">
       <div className="container mx-auto max-w-7xl">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          initial={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-12 sm:mb-16"
         >
@@ -429,9 +429,9 @@ export default function Services() {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50, rotateX: -15 }}
-              animate={isInView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              initial={{ opacity: 1, y: 0, rotateX: 0 }}
+              animate={{ opacity: 1, y: 0, rotateX: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.05 }}
               whileHover={{ 
                 scale: 1.05, 
                 rotateY: 5,
