@@ -39,6 +39,7 @@ export default function About() {
                 <img 
                   src="/about.jpeg" 
                   alt="Astro Vikram" 
+                  loading="lazy"
                   className="w-full h-auto object-cover"
                 />
               </div>

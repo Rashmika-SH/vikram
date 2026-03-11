@@ -22,7 +22,8 @@ export default function Footer() {
               >
                 <img 
                   src="/logo.jpeg" 
-                  alt="Astro Vikram Logo" 
+                  alt="Astro Vikram Logo"
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
               </motion.div>
