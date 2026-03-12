@@ -47,14 +47,30 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-bold mb-4 text-cosmic-gold">Services</h4>
-            <ul className="space-y-2 text-gray-400 text-sm">
-              <li>Birth Chart Reading</li>
-              <li>Marriage Compatibility</li>
-              <li>Career Guidance</li>
-              <li>Vastu Consultation</li>
-            </ul>
+          <div className="md:col-span-2">
+            <h4 className="font-bold mb-4 text-cosmic-gold">Our Services</h4>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-gray-400 text-xs sm:text-sm">
+              <div>
+                <li className="list-none">Horoscope & Kundli Reading</li>
+                <li className="list-none">Marriage & Divorce Problems</li>
+                <li className="list-none">Bring Back Lost Love</li>
+                <li className="list-none">Love Spell & Vashikaran</li>
+                <li className="list-none">Palm Reading</li>
+                <li className="list-none">Psychic & Clairvoyant</li>
+                <li className="list-none">Black Magic Removal</li>
+                <li className="list-none">Nazar & Evil Spirit Removal</li>
+              </div>
+              <div>
+                <li className="list-none">Voodoo Removal</li>
+                <li className="list-none">Jealousy & Curse Removal</li>
+                <li className="list-none">Witchcraft Removal</li>
+                <li className="list-none">Spiritual Healing & Stress</li>
+                <li className="list-none">Durga Mata Pujas</li>
+                <li className="list-none">Kali Mata Pujas</li>
+                <li className="list-none">Lottery Luck</li>
+                <li className="list-none">Face & Shell Reading</li>
+              </div>
+            </div>
           </div>
 
           <div>
